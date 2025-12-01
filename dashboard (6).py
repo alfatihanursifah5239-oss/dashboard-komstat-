@@ -19,16 +19,16 @@ prov.columns = ["Provinsi", "Jumlah"]
 fig_prov = px.bar(prov, x="Provinsi", y="Jumlah", title="Distribusi Anak per Provinsi")
 st.plotly_chart(fig_prov)
 
-# 2. Kategori Umur
-st.subheader("Kategori Umur (Bayi - Batita - Balita)")
-data["Kategori_Umur"] = pd.cut(
-    data["Umur(Bulan)(B4K7BLN)"],
-    bins=[-1, 12, 36, 59],
-    labels=["Bayi", "Batita", "Balita"]
-)
+# 2. KATEGORI UMUR
+st.subheader("Persentase Kategori Umur")
 umur = data["Kategori_Umur"].value_counts().reset_index()
-fig_umur = px.pie(umur, names="index", values="Kategori_Umur",
-                  title="Persentase Kategori Umur")
+umur.columns = ["Kategori", "Jumlah"]  # rename biar jelas
+fig_umur = px.pie(
+    umur,
+    names="Kategori",
+    values="Jumlah",
+    title="Persentase Kategori Umur"
+)
 st.plotly_chart(fig_umur)
 
 # 3. Jenis Kelamin
