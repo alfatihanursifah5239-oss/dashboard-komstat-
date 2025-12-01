@@ -6,7 +6,8 @@ st.title("Dashboard Analisis Data Anak")
 st.write("Dibuat oleh: Alfatiha Nursifah Irawan 💛")
 
 # Load dataset
-data = pd.read_excel("data_bersih.xlsx")
+data = pd.read_csv("data_bersih.csv", sep=None, engine="python")
+
 
 # 1. Distribusi Provinsi
 st.subheader("Distribusi Provinsi")
