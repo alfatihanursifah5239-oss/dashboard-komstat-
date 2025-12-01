@@ -6,7 +6,8 @@ st.title("Dashboard Analisis Data Anak")
 st.write("Dibuat oleh: Alfatiha Nursifah Irawan 💛")
 
 # Load dataset
-data = pd.read_csv("data_bersih.csv", sep=None, engine="python")
+data = pd.read_csv("data_bersih.csv", decimal=",")
+
 
 
 # 1. Distribusi Provinsi
