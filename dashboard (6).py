@@ -3,12 +3,14 @@ import pandas as pd
 import plotly.express as px
 
 st.title("Dashboard Analisis Data Anak")
-st.write("Dibuat oleh: Alfatiha Nursifah Irawan 💛")
+st.write("Dibuat oleh: Alfatiha Nursifah Irawan")
 
-# Load dataset
-data = pd.read_csv("data_bersih.csv", decimal=",")
+# --- Load Data ---
+data = pd.read_csv("data_bersih.csv", sep=";", decimal=",")
 
-
+# --- Tampilkan Data ---
+st.subheader("Data Bersih")
+st.dataframe(data)
 
 # 1. Distribusi Provinsi
 st.subheader("Distribusi Provinsi")
